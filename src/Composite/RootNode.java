@@ -10,7 +10,6 @@ public class RootNode extends IRoot {
     //存储节点的容器
     private List<IRoot> roots = new ArrayList<>();
 
-
     public RootNode(String name) {
         super(name);
     }

@@ -8,6 +8,7 @@ public class Client {
         EagerSingleton eagerSingleton2 = EagerSingleton.getInstance();
         System.out.println("饿汉实例一:" + eagerSingleton1.hashCode());
         System.out.println("饿汉实例二:" + eagerSingleton2.hashCode());
+        System.out.println("是否相同:"+eagerSingleton1.equals(eagerSingleton2));
 
         //2.然后判断 LazySingleton的对象只有一个
         LazySingleton lazySingleton1 = LazySingleton.getInstance();

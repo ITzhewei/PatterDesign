@@ -41,22 +41,23 @@ public class NodeImpl extends Node {
         isRoot = true;
         if (this.leftNode == null) {
             this.leftNode = node;
-            node.addParentNode(this);
-            String name = this.getName();
-            node.setName(name);
-            String reName = node.reName(node);
-            node.setLevel(level + 1);
+            String reName = createSub(node);
             node.setName(reName + "_1");
         } else {
             this.rightNode = node;
-            node.addParentNode(this);
-            String name = this.getName();
-            node.setName(name);
-            String reName = node.reName(node);
-            node.setLevel(level + 1);
+            String reName = createSub(node);
             node.setName(reName + "_2");
         }
         return this;
+    }
+
+    private String createSub(Node node) {
+        node.addParentNode(this);
+        String name = this.getName();
+        node.setName(name);
+        String reName = node.reName(node);
+        node.setLevel(level + 1);
+        return reName;
     }
 
     @Override
