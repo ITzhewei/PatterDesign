@@ -102,6 +102,7 @@ public class NodeImpl extends Node {
 
     @Override
     public String reName(Node node) {
+
         String name = node.getName();
         int index = name.indexOf("_");
         char n = (char) ((int) name.charAt(index + 1) + 1);

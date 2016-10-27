@@ -9,5 +9,8 @@ public abstract class Builder {
     public abstract void buildNode();
 
     //创建树
-    public abstract Node retrieveTree();
+    public abstract void retrieveTree();
+
+    //得到树的根节点
+    public abstract Node getRoot();
 }

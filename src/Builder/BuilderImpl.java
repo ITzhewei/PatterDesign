@@ -17,9 +17,7 @@ public class BuilderImpl extends Builder {
     }
 
     @Override
-    public Node retrieveTree() {
-        //得到根节点
-        Node node = nodes.get(0);
+    public void retrieveTree() {
         //遍历所有的节点
         for (int i = 0; i < nodes.size(); i++) {
             //判断节点是否含有子节点
@@ -29,6 +27,12 @@ public class BuilderImpl extends Builder {
                 nodes.get(i).addSubNode(nodes.get(i * 2 + 2));
             }
         }
+    }
+
+    @Override
+    public Node getRoot() {
+        //得到根节点
+        Node node = nodes.get(0);
         //返回根节点
         return node;
     }
